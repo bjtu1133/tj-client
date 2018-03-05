@@ -8,6 +8,7 @@ import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { StorageTableComponent } from './component/storage-table/storage-table.component';
 import { StorageService } from './service/storage.service';
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { StorageService } from './service/storage.service';
     FormsModule,
     HttpClientModule,
     MaterialModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    AppRoutingModule
   ],
   providers: [StorageService],
   bootstrap: [AppComponent]

@@ -1,28 +1,28 @@
 <div class="example-container mat-elevation-z8">
-  <mat-table #table [dataSource]="dataSource">
+  <mat-table #table [dataSource]="store.storages">
 
     <!-- Position Column -->
-    <ng-container matColumnDef="position">
+    <ng-container matColumnDef="pno">
       <mat-header-cell *matHeaderCellDef> 型号 </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+      <mat-cell *matCellDef="let element"> {{element.pno}} </mat-cell>
     </ng-container>
 
     <!-- Name Column -->
-    <ng-container matColumnDef="name">
+    <ng-container matColumnDef="dot">
       <mat-header-cell *matHeaderCellDef> 周期 </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      <mat-cell *matCellDef="let element"> {{element.dot}} </mat-cell>
     </ng-container>
 
     <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
+    <ng-container matColumnDef="loc">
       <mat-header-cell *matHeaderCellDef> 库位 </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+      <mat-cell *matCellDef="let element"> {{element.loc}} </mat-cell>
     </ng-container>
 
     <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
+    <ng-container matColumnDef="amount">
       <mat-header-cell *matHeaderCellDef> 数量 </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+      <mat-cell *matCellDef="let element"> {{element.amount}} </mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

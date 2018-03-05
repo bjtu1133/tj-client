@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { StorageService } from '../../service/storage.service';
 import { StorageRecordModel } from '../../model/storage-record.model';
-
-import { observable } from 'mobx';
 
 @Injectable()
 export class IncStorageStore {
 
-    @observable
     record: StorageRecordModel;
 
-    constructor(public ss: StorageService) {
+    constructor(private ss: StorageService, private router: Router) {
         this.record = new StorageRecordModel();
     }
 
     submit = () => {
-        this.ss.increaseStorage(this.record);
+        this.ss.increaseStorage(this.record).subscribe(() => {
+            this.router.navigate(['/dash-board']);
+        });
     }
 }
