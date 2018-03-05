@@ -1,23 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { IncStorageComponent } from './inc-storage/inc-storage.component';
+import { IncStorageComponent } from './component/inc-storage/inc-storage.component';
 import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { StorageTableComponent } from './component/storage-table/storage-table.component';
+import { StorageService } from './service/storage.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    IncStorageComponent
+    IncStorageComponent,
+    StorageTableComponent
   ],
   imports: [
     BrowserModule,
-    MaterialModule,
     BrowserAnimationsModule,
+    FormsModule,
+    HttpClientModule,
+    MaterialModule,
     NoopAnimationsModule
   ],
-  providers: [],
+  providers: [StorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
