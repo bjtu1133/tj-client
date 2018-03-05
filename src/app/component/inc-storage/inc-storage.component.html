@@ -1,0 +1,63 @@
+<div>  
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="来源" >
+    </mat-form-field>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <input matInput placeholder="型号" 
+            [(ngModel)] = "store.record.storage.pno"
+            [ngModelOptions]="{standalone: true}">
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <input matInput placeholder="周期" 
+          [(ngModel)] = "store.record.storage.dot"
+          [ngModelOptions]="{standalone: true}">
+        </mat-form-field></td>
+      </tr>
+      <tr>
+        <td><mat-form-field class="example-full-width">
+            <input matInput placeholder="库位" 
+            [(ngModel)] = "store.record.storage.loc"
+            [ngModelOptions]="{standalone: true}">
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+            <input matInput placeholder="数量"
+            type = "number"
+            [(ngModel)] = "store.record.storage.amount"
+            [ngModelOptions]="{standalone: true}">
+        </mat-form-field></td>
+      </tr>
+    </table>
+
+    <p>
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="备注" 
+                  [(ngModel)] = "store.record.comment"
+                  [ngModelOptions]="{standalone: true}">
+        </textarea>
+      </mat-form-field>
+    </p>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td><mat-form-field class="example-full-width">
+            <input matInput placeholder="时间" 
+            [(ngModel)] = "store.record.date"
+            [ngModelOptions]="{standalone: true}">
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+            <input matInput placeholder="经手人" 
+            [(ngModel)] = "store.record.opr"
+            [ngModelOptions]="{standalone: true}">
+        </mat-form-field></td>
+        </tr>
+    </table>
+  </form>
+  <button mat-raised-button 
+          color="primary"
+          (click) = "onSubmit()"
+          >提交</button>
+</div>
